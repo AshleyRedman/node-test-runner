@@ -5,12 +5,14 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "full": "node --test",
+        "single": "node --test other.test.ts"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "prettier": "^2.8.5"
+        "prettier": "^2.8.5",
+        "typescript": "^5.0.2"
     }
 }
