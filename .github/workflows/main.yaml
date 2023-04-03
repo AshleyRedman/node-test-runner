@@ -2,7 +2,7 @@ name: Jobs
 on: [push]
 
 jobs:
-    types:
+    ci:
         timeout-minutes: 10
         runs-on: ubuntu-latest
         steps:
