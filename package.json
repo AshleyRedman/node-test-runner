@@ -1,11 +1,10 @@
 {
     "name": "development",
-    "type": "module",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "node --test --require ts-node/register",
+        "test": "node --test --require ts-node/register *.test.ts",
         "format": "prettier --write *.ts",
         "update": "ncu -u",
         "build": "pnpm tsc --outDir build"
