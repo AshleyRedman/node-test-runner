@@ -5,8 +5,10 @@
     "main": "index.js",
     "scripts": {
         "test": "node --test --require ts-node/register *.test.ts",
-        "format": "prettier --write *.ts",
-        "update": "ncu -u",
+        "format:write": "prettier --write *.ts",
+        "format:check": "prettier --check *.ts",
+        "packages:update": "ncu -u",
+        "packages:check": "ncu",
         "build": "pnpm tsc --outDir build"
     },
     "keywords": [],

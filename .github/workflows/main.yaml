@@ -1,0 +1,37 @@
+name: Jobs
+on: [push]
+
+jobs:
+    types:
+        timeout-minutes: 10
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Install Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 19
+
+            - uses: pnpm/action-setup@v2
+              name: Install pnpm
+              id: pnpm-install
+              with:
+                  version: 8
+                  run_install: false
+
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Prettier check
+              working-directory: ./
+              run: pnpm run format:check
+
+            - name: NCU check
+              working-directory: ./
+              run: pnpm run packages:check
+
+            - name: Test suite
+              working-directory: ./
+              run: pnpm run test
